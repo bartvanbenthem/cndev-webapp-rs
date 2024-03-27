@@ -1,0 +1,31 @@
+[package]
+name = "website"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "website"
+
+[dependencies]
+actix-web = "4"
+actix-files = "0.6.5"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1", features = ["derive"]}
+serde_json = "1.0.83"
+config = "0.13"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4.22", default-features = false, features = ["clock"] }
+tracing = { version = "0.1", features = ["log"] }
+tracing-subscriber = { version = "0.3", features = ["registry", "env-filter"] }
+tracing-bunyan-formatter = "0.3"
+tracing-log = "0.1"
+handlebars = { version = "4.3.3", features = ["dir_source"] }
+
+[dev-dependencies]
+reqwest = "0.11"
