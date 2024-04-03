@@ -2,7 +2,7 @@
 
 #cargo check
 cargo fmt
-cargo test
+cargo test -- --nocapture
 #cargo tarpaulin --ignore-tests
 #cargo clippy
 #cargo audit

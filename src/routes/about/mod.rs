@@ -1,13 +1,28 @@
+use crate::configuration::AppState;
+use crate::utils::FileSystemCLient;
 use actix_web::{web, HttpResponse};
-use handlebars::Handlebars;
+use serde::Deserialize;
 use serde_json::json;
 
-pub async fn about(hb: web::Data<Handlebars<'_>>) -> HttpResponse {
-    let body_data = hb
+#[derive(Deserialize, Debug, Clone)]
+struct About {
+    title: String,
+    content: String,
+}
+
+pub async fn about(app: web::Data<AppState>) -> HttpResponse {
+    let file = format!("{}/about/data.json", &app.settings.content_path.clone());
+
+    let body_data = FileSystemCLient::get_file(&file).await;
+    let about: About = serde_json::from_value(body_data).expect("Failed to deserialize JSON");
+
+    let body_data = app
+        .template
         .render(
             "about",
             &json!({
-                "title": "About",
+                "title": about.title,
+                "content": about.content,
             }),
         )
         .unwrap();
@@ -16,6 +31,6 @@ pub async fn about(hb: web::Data<Handlebars<'_>>) -> HttpResponse {
         "body": body_data.to_owned(),
     });
 
-    let body = hb.render("layout", &about).unwrap();
+    let body = app.template.render("layout", &about).unwrap();
     HttpResponse::Ok().body(body)
 }

@@ -1,7 +1,7 @@
+use cndevwebapp::configuration::get_configuration;
+use cndevwebapp::startup::run;
+use cndevwebapp::telemetry::{get_subscriber, init_subscriber};
 use std::net::TcpListener;
-use website::configuration::get_configuration;
-use website::startup::run;
-use website::telemetry::{get_subscriber, init_subscriber};
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {

@@ -2,15 +2,15 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
+  body {
+    /*#ccc4bd;*/
+    background-color: #d6cfc8;
     color: #5a5a5a;
     min-height: 75rem;
   }
-  
-      /* CUSTOMIZE THE NAVBAR
-  -------------------------------------------------- */
-  .mb-4 {
-    margin-bottom: 0rem !important;
+
+  .bg-dark {
+    color: #302f2e;
   }
 
   /* CUSTOMIZE THE CAROUSEL
@@ -20,6 +20,8 @@ body {
   .carousel {
     margin-bottom: 2rem;
     margin-top: 0rem;
+    text-shadow: 0 0 4px black; /* Create a black shadow around the text */
+    padding-bottom: 10px; /* Add some spacing between the text and the line */ 
   }
   /* Since positioning the image, we need to help out the caption */
   .carousel-caption {
@@ -37,6 +39,39 @@ body {
     left: 0;
     min-width: 100%;
     height: 32rem;
+  }
+
+  .carousel-btn-dark {
+    background-color: #343e4d; /* Change the background color as desired */
+    color: #ebe7e4; /* Change the text color as desired */
+  }
+
+  .carousel-btn-dark:hover {
+    background-color: #424953; /* Background color on hover */
+    color: #ebe7e4; /* Text color on hover */
+  }
+
+        /* CUSTOMIZE THE NAVBAR
+  -------------------------------------------------- */
+  .mb-4 {
+    margin-bottom: 0rem !important;
+  }
+
+  .navbar-custom {
+    background-color: #343e4d !important;
+  }
+
+  /* JUMBOTRON FOR MOBILE ONLY
+  -------------------------------------------------- */
+  .jumbotron {
+    background-image: url('/static/img/banner-3-small.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 260px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 4px black; /* Create a black shadow around the text */
+    padding-bottom: 10px; /* Add some spacing between the text and the line */ 
   }
   
   /* RESPONSIVE CSS
@@ -60,13 +95,63 @@ body {
       margin-top: 7rem;
     }
   }
-
-    /* CUSTOMIZE THE MAP
+    
+    /* CUSTOMIZE TILES
   -------------------------------------------------- */
-  .map {
-    height: 450px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+  .tile-green {
+    background-color: #55726e;
+    color:  #353636;
   }
 
+
+  .tile-blue {
+    background-color: #343e4d !important;
+    color:  #353636;
+  }
+
+  .tile-bio {
+    background-color: #6e7e7b !important;
+    color:  #353636;
+  }
+
+    /* CUSTOMIZE FOOTER
+  -------------------------------------------------- */
+
+  .tile-darkgreen {
+    background-color: #7f8887;
+  }
+
+  .tile-darkblue {
+    background-color: #343e4d !important;
+  }
+
+    /* CUSTOMIZE FORM
+  -------------------------------------------------- */
+
+  .tile-beige {
+    background-color: #eee9e6;
+  }
+
+    /* CUSTOMIZE ABOUT PAGE
+  -------------------------------------------------- */
+
+  .image-container-profile {
+    width: 400px;
+    height: 400px;
+    display: flex; /* Use flexbox for center alignment */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+  }
+
+  .image-container {
+    width: 300px;
+    height: 300px;
+    display: flex; /* Use flexbox for center alignment */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+  }
   
+  .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+  }

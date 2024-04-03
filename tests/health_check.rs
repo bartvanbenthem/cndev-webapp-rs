@@ -1,6 +1,6 @@
 //! tests/health_check.rs
+use cndevwebapp::startup::run;
 use std::net::TcpListener;
-use website::startup::run;
 
 pub struct TestApp {
     pub address: String,
