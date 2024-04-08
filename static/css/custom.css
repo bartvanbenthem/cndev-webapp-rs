@@ -4,7 +4,7 @@
 
   body {
     /*#ccc4bd;*/
-    background-color: #d6cfc8;
+    background-color: #f3f0ee;
     color: #5a5a5a;
     min-height: 75rem;
   }
@@ -99,7 +99,7 @@
     /* CUSTOMIZE TILES
   -------------------------------------------------- */
   .tile-green {
-    background-color: #55726e;
+    background-color: #566361;
     color:  #353636;
   }
 
@@ -110,7 +110,7 @@
   }
 
   .tile-bio {
-    background-color: #6e7e7b !important;
+    background-color: #697269 !important;
     color:  #353636;
   }
 
@@ -118,7 +118,7 @@
   -------------------------------------------------- */
 
   .tile-darkgreen {
-    background-color: #7f8887;
+    background-color: #404d4b;
   }
 
   .tile-darkblue {
@@ -129,7 +129,7 @@
   -------------------------------------------------- */
 
   .tile-beige {
-    background-color: #eee9e6;
+    background-color: #ffffff;
   }
 
     /* CUSTOMIZE ABOUT PAGE
