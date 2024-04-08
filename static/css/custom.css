@@ -64,7 +64,7 @@
   /* JUMBOTRON FOR MOBILE ONLY
   -------------------------------------------------- */
   .jumbotron {
-    background-image: url('/static/img/banner-3-small.jpg');
+    background-image: url('/static/img/small_header.jpg');
     background-size: cover;
     background-position: center;
     height: 260px;
