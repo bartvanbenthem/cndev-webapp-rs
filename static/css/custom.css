@@ -99,7 +99,7 @@
     /* CUSTOMIZE TILES
   -------------------------------------------------- */
   .tile-green {
-    background-color: #566361;
+    background-color: #57646e;
     color:  #353636;
   }
 
@@ -110,7 +110,7 @@
   }
 
   .tile-bio {
-    background-color: #697269 !important;
+    background-color: #526075 !important;
     color:  #353636;
   }
 
@@ -118,7 +118,7 @@
   -------------------------------------------------- */
 
   .tile-darkgreen {
-    background-color: #404d4b;
+    background-color: #43525c;
   }
 
   .tile-darkblue {
