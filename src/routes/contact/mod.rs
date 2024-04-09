@@ -75,7 +75,23 @@ pub async fn contact_post(
         let body = app.template.render("layout", &contact).unwrap();
         HttpResponse::Ok().body(body)
     } else {
+        let body_data = app
+            .template
+            .render(
+                "error.response",
+                &json!({
+                    "error": "Failed to send email, try again later.",
+                }),
+            )
+            .unwrap();
+
+        let error = json!({
+            "body": body_data.to_owned(),
+        });
+
         // If sending email failed, return an error page
-        HttpResponse::InternalServerError().body("Failed to send email")
+        HttpResponse::InternalServerError().body("Failed to send email");
+        let body = app.template.render("layout", &error).unwrap();
+        HttpResponse::InternalServerError().body(body)
     }
 }
