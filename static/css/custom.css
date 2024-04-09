@@ -112,6 +112,21 @@
   .tile-bio {
     background-color: #526075 !important;
     color:  #353636;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox for center alignment */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+  }
+
+  .tile-img {
+    background-color: #c1cbd8 !important;
+    color:  #353636;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Use flexbox for center alignment */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
   }
 
     /* CUSTOMIZE FOOTER
@@ -136,16 +151,16 @@
   -------------------------------------------------- */
 
   .image-container-profile {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     display: flex; /* Use flexbox for center alignment */
     justify-content: center; /* Horizontally center the image */
     align-items: center; /* Vertically center the image */
   }
 
   .image-container {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     display: flex; /* Use flexbox for center alignment */
     justify-content: center; /* Horizontally center the image */
     align-items: center; /* Vertically center the image */
