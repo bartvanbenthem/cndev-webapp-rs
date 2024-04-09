@@ -33,6 +33,7 @@
   .carousel-item {
     height: 32rem;
   }
+  
   .carousel-item > img {
     position: absolute;
     top: 0;
@@ -133,7 +134,7 @@
   -------------------------------------------------- */
 
   .tile-darkgreen {
-    background-color: #43525c;
+    background-color: #879aa7;
   }
 
   .tile-darkblue {
