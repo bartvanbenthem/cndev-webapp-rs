@@ -4,28 +4,33 @@
             </br> 
             <h1>{{header1}}</h1>      
             </br>   
-            <form action='/contact' method='POST'>
+            <form id="contactForm" action='/contact' method='POST'>
                 <!-- Include the CSRF token -->
                 <input type='hidden' name='csrf_token' value='{{token}}'>
                 <div class="mb-3 w-50">
                     <label class="form-label" for="name">Naam:</label>
-                    <input class="form-control tile-beige" type='text' name='name' id='name'>
+                    <input class="form-control tile-beige" type='text' name='name' id='name' required>
+                    <small id="nameError" class="text-danger"></small>
                 </div>
                 <div class="mb-3 w-50">
                     <label class="form-label" for="from">Email:</label>
-                    <input class="form-control tile-beige" type='text' name='from' id='from'>
+                    <input class="form-control tile-beige" type='email' name='from' id='from' required>
+                    <small id="emailError" class="text-danger"></small>
                 </div>
                 <div class="mb-3 w-50">
                     <label class="form-label" for="phone">Tel. Nummer:</label>
-                    <input class="form-control tile-beige" type='text' name='phone' id='phone'>
+                    <input class="form-control tile-beige" type='text' name='phone' id='phone' required>
+                    <small id="phoneError" class="text-danger"></small>
                 </div>
                 <div class="mb-3 w-50">
                     <label class="form-label" for="subject">Onderwerp:</label>
-                    <input class="form-control tile-beige" type='text' name='subject' id='subject'>
+                    <input class="form-control tile-beige" type='text' name='subject' id='subject' required>
+                    <small id="subjectError" class="text-danger"></small>
                 </div>
                 <div class="mb-3 w-50">
                     <label class="form-label" for="message">Bericht:</label>
-                    <textarea class="form-control tile-beige" rows="3" name='message' id='message'></textarea>
+                    <textarea class="form-control tile-beige" rows="3" name='message' id='message' required></textarea>
+                    <small id="messageError" class="text-danger"></small>
                 </div>
                 <div>
                     <input type="submit" class="btn btn-secondary" value="Send" />
@@ -46,3 +51,63 @@
         style="margin-top: -60px;">
     </iframe>
 </div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        let isValid = true; // Flag to track validity
+        clearErrors(); // Clear previous error messages
+
+        // Validate Name
+        const name = document.getElementById('name').value.trim();
+        if (name === '') {
+            displayError('nameError', 'Naam is verplicht.');
+            isValid = false;
+        }
+
+        // Validate Email
+        const email = document.getElementById('from').value.trim();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            displayError('emailError', 'Voer een geldig e-mailadres in.');
+            isValid = false;
+        }
+
+        // Validate Phone
+        const phone = document.getElementById('phone').value.trim();
+        const phonePattern = /^\d{10}$/; // Adjust this regex based on your phone number format
+        if (!phonePattern.test(phone)) {
+            displayError('phoneError', 'Voer een geldig telefoonnummer in (10 cijfers).');
+            isValid = false;
+        }
+
+        // Validate Subject
+        const subject = document.getElementById('subject').value.trim();
+        if (subject === '') {
+            displayError('subjectError', 'Onderwerp is verplicht.');
+            isValid = false;
+        }
+
+        // Validate Message
+        const message = document.getElementById('message').value.trim();
+        if (message === '') {
+            displayError('messageError', 'Bericht is verplicht.');
+            isValid = false;
+        }
+
+        // Prevent form submission if invalid
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+
+    function displayError(errorId, message) {
+        document.getElementById(errorId).textContent = message;
+    }
+
+    function clearErrors() {
+        const errorIds = ['nameError', 'emailError', 'phoneError', 'subjectError', 'messageError'];
+        errorIds.forEach(id => {
+            document.getElementById(id).textContent = '';
+        });
+    }
+</script>
