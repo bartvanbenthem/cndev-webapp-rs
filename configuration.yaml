@@ -1,12 +1,12 @@
 # configuration.yaml
 application_port: 8000
-repo: "bartvanbenthem/cndev-webapp-rs"
-content_path: "../cndev-webapp-rs-content"
+repo: "bartvanbenthem/cndev-webapp-actix"
+content_path: "../cndev-webapp-actix-content"
 mail:
   smtp_host: "localhost"
   smtp_port: 1025
   smtp_user: ""
   smtp_password: ""
-  mail_address: "mail@mypurebody.nl"
+  mail_address: "mail@cndev.nl"
   tls: false
   
