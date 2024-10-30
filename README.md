@@ -1,5 +1,6 @@
 # cndev-webapp-rs
 
+Project template for creating server rendered web applications in Rust with Actix-web. Instead of a relational database, file storage is used for dynamic content to keep hosting costs at a minumum. 
 
 ### HealthCheck
 ```bash
